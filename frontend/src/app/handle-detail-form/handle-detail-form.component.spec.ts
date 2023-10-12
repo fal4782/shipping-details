@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddDetailFormComponent } from './add-detail-form.component';
+import { HandleDetailFormComponent } from './handle-detail-form.component';
 
 describe('AddDetailFormComponent', () => {
-  let component: AddDetailFormComponent;
-  let fixture: ComponentFixture<AddDetailFormComponent>;
+  let component: HandleDetailFormComponent;
+  let fixture: ComponentFixture<HandleDetailFormComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AddDetailFormComponent]
+      declarations: [HandleDetailFormComponent]
     });
-    fixture = TestBed.createComponent(AddDetailFormComponent);
+    fixture = TestBed.createComponent(HandleDetailFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
