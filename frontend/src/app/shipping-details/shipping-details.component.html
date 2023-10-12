@@ -1,0 +1,34 @@
+<div class="container mt-5">
+    <h1>Shipping Details</h1>
+  
+    <div class="table row">
+        <router-outlet></router-outlet>
+      <button routerLink="/details" class="btn btn-light col-auto ml-auto addBtn" >Add Details +</button>
+     
+  
+      <table class="table table-dark text-center">
+        <thead>
+          <tr>
+            <th>#uuid</th>
+            <th>Product Name</th>
+            <th>Dispatch Time</th>
+            <th>Dispatch Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let detail of shippingDetails; let index = index">
+            <th>{{detail.uuid}}</th>
+            <td>{{detail.product_name}}</td>
+            <td>{{detail.dispatch_time}}</td>
+            <td>{{detail.dispatch_date | date: 'dd/MM/yyyy'}}</td>
+            <td>
+              <button class="btn btn-dark mb-2" ><i class="fas fa-edit"></i></button>
+              <button class="btn btn-dark mb-2" (click)="deleteDetails(detail.uuid)"><i class="fas fa-trash"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+  </div>

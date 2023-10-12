@@ -1,0 +1,51 @@
+<div class="container mt-5">
+
+  <h2>Add Shipping Details</h2>
+  
+  <div class="container-form">
+    
+    <form [formGroup]="addDetailsForm">
+      
+      <div class="row mb-3">
+        <label for="uuid" class="col-sm-6 col-form-label">UUID</label>
+        <div class="col-sm-6">
+          <input type="text" pInputText formControlName="uuid" [disabled]="true"/>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <label for="product-name" class="col-sm-6 col-form-label">Product Name</label>
+        <div class="col-sm-6 ">
+          <input type="text" pInputText formControlName="productName" placeholder="Enter Product Name"/>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <label for="dispatch_time" class="col-sm-6 col-form-label">Dispatch Time</label>
+        <div class="col-sm-6">
+          <p-calendar formControlName = "dispatchTime" [timeOnly]="true" placeholder="Pick Dispatch Time"></p-calendar>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <label for="dispatch_date" class="col-sm-6 col-form-label">Dispatch Date</label>
+        <div class="col-sm-6">
+          <p-calendar formControlName="dispatchDate" placeholder="Pick Dispatch Date"></p-calendar>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <label for="quantity" class="col-sm-6 col-form-label">Quantity</label>
+        <div class="col-sm-6">
+          <p-inputNumber inputId="integeronly" formControlName="quantity" placeholder="Enter Quantity"></p-inputNumber>
+        </div>
+      </div>
+
+      <div class="row mb-3 buttons">
+        <p-button label="Save" styleClass="p-button-raised p-button-success" class="saveBtn" (click)="saveDetails()"></p-button>
+        <p-button label="Cancel" styleClass="p-button-raised p-button-secondary" routerLink="/"></p-button>
+      </div>
+      
+    </form>
+  </div>
+</div>
