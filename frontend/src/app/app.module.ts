@@ -12,6 +12,7 @@ import { CalendarModule } from 'primeng/calendar';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { ToastModule } from 'primeng/toast'
+import { PaginatorModule } from 'primeng/paginator';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { RequiredPipe } from './pipes/required.pipe'
 
@@ -30,6 +31,7 @@ import { RequiredPipe } from './pipes/required.pipe'
     InputTextModule,
     InputNumberModule,
     ToastModule,
+    PaginatorModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([
       {path:'', component: ShippingDetailsComponent},

@@ -1,13 +1,13 @@
-import {
-  Component,
-  OnInit
-} from '@angular/core';
-import {
-  ApiCallService
-} from '../services/api-call.service';
-import {
-  MessageService
-} from 'primeng/api';
+import { Component, OnInit } from '@angular/core';
+import { ApiCallService } from '../services/api-call.service';
+import { MessageService } from 'primeng/api';
+
+interface PageEvent {
+  first: number;
+  rows: number;
+  page: number;
+  pageCount: number;
+}
 
 @Component({
   selector: 'app-shipping-details',
@@ -21,8 +21,17 @@ export class ShippingDetailsComponent implements OnInit {
   shippingDetails!: Array < any > ;
   visible: boolean = false;
 
+  totalCountOfDetails:number = 0;
+  noOfDetails:number = 10;
+
+  first: number = 0
+  rows: number = 5
+  offset:number = 0
+  limit: number = 5
+
   prerequisite() {
-    this.getDetails()
+    this.getDetails(this.offset,this.limit)
+    this.getTotalCount()
   }
 
   constructor(private apiService: ApiCallService, private messageService: MessageService) {}
@@ -31,9 +40,16 @@ export class ShippingDetailsComponent implements OnInit {
     this.prerequisite()
   }
 
-  getDetails() {
-    this.apiService.getDetails().subscribe((data) => {
-      this.shippingDetails = data
+  getDetails(offset:number, limit:number) {
+    this.apiService.getDetails(offset,limit).subscribe((data) => {
+      this.shippingDetails = data.details
+      this.noOfDetails = data.count     
+    })
+  }
+
+  getTotalCount(){
+    this.apiService.getTotalCount().subscribe((data)=>{
+      this.totalCountOfDetails = data
     })
   }
 
@@ -48,9 +64,7 @@ export class ShippingDetailsComponent implements OnInit {
     // console.log(id);
     this.apiService.id = id
     this.apiService.isEditClicked = true
-    console.log(id);
-
-
+    // console.log(id);
   }
 
   showToast(id:number){
@@ -72,7 +86,6 @@ export class ShippingDetailsComponent implements OnInit {
     this.messageService.clear('confirm');
     console.log('onConfirm',id);
     this.deleteDetails(this.id)
-    
     this.visible = false;
   }
 
@@ -81,4 +94,14 @@ export class ShippingDetailsComponent implements OnInit {
     this.visible = false;
   }
 
+  onPageChange(event: any) {
+    // console.log(event);
+    // console.log("testing"+this.noOfDetails)    
+    this.first = event.first;
+    this.rows = event.rows;
+    this.offset = this.first;
+    this.limit = this.rows;
+    this.getDetails(this.offset,this.limit);
+  }
+  
 }

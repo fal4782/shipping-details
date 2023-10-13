@@ -46,6 +46,8 @@
       </div>
 
       <div class="row mb-3 buttons">
+        <p-toast></p-toast>
+        <button type="button" pButton pRipple (click)="showSuccessToast()" label="Show" class="p-button-success"></button>
         <p-button label="Save" styleClass="p-button-raised p-button-success" class="saveBtn" (click)="saveDetails()"></p-button>
         <p-button label="Cancel" styleClass="p-button-raised p-button-secondary" routerLink="/" (click)="cancelBtn()"></p-button>
       </div>

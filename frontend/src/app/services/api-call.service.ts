@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -13,8 +13,16 @@ export class ApiCallService {
 
   }
 
-  getDetails(){
-    return this.http.get<any>('http://localhost:3000/details')
+  getDetails(offset:number,limit:number){
+    const params = new HttpParams()
+      .set('offset', offset.toString())
+      .set('limit', limit.toString())
+
+    return this.http.get<any>('http://localhost:3000/details',{ params })
+  }
+
+  getTotalCount(){
+    return this.http.get<any>('http://localhost:3000/countDetails')
   }
 
   postDetails(details:{}){

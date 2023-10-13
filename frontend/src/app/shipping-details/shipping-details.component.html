@@ -17,6 +17,7 @@
           <th class="w-25">Actions</th>
         </tr>
       </thead>
+
       <tbody>
         <tr *ngFor="let detail of shippingDetails; let index = index">
           <th>{{detail.uuid}}</th>
@@ -28,16 +29,16 @@
             <button class="btn btn-dark mb-2"><i class="fas fa-edit" routerLink="/details"
                 (click)="editBtn(detail.uuid)"></i></button>
 
-            <p-toast position="bottom-center" key="confirm" (onClose)="onReject()" [baseZIndex]="5000">
+            <p-toast position="center" key="confirm" (onClose)="onReject()" [baseZIndex]="5000">
               <ng-template let-message pTemplate="message">
 
-                <div class="flex flex-column" style="flex: 1">
+                <div class="flex flex-column ml-4" style="flex: 1">
                   <div class="text-center">
                     <i class="pi pi-exclamation-triangle" style="font-size: 3rem"></i>
                     <h4>{{message.summary}}</h4>
                     <p>{{message.detail}}</p>
                   </div>
-                  <div class="grid p-fluid">
+                  <div class="row p-fluid">
                     <div class="col-6">
                       <button type="button" pButton (click)="onConfirm(detail.uuid)" label="Yes"
                         class="p-button-success"></button>
@@ -57,9 +58,12 @@
         </tr>
       </tbody>
     </table>
-    <!-- <div *ngIf="visible"> -->
-
-    <!-- </div> -->
+    
   </div>
+  <hr>
+  <div class="flex align-items-center justify-content-end">
+    <p-paginator bg-transparent (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="totalCountOfDetails" [rowsPerPageOptions]="[5, 10, 20, 30]"></p-paginator>
+  </div>
+  
 
 </div>
