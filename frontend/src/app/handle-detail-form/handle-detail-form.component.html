@@ -1,6 +1,7 @@
 <div class="container mt-5">
 
-  <h2>Shipping Details</h2>
+  <div *ngIf="isEditClicked==false"><h2>Add Shipping Details</h2></div>
+  <div *ngIf="isEditClicked==true"><h2>Edit Shipping Details</h2></div>
   
   <div class="container-form">
     
@@ -47,7 +48,7 @@
 
       <div class="row mb-3 buttons">
         <p-toast></p-toast>
-        <button type="button" pButton pRipple (click)="showSuccessToast()" label="Show" class="p-button-success"></button>
+        <!-- <button type="button" pButton pRipple (click)="showSuccessToast()" label="Show" class="p-button-success"></button> -->
         <p-button label="Save" styleClass="p-button-raised p-button-success" class="saveBtn" (click)="saveDetails()"></p-button>
         <p-button label="Cancel" styleClass="p-button-raised p-button-secondary" routerLink="/" (click)="cancelBtn()"></p-button>
       </div>

@@ -14,110 +14,7 @@ h1 {
   margin-top: 20px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ::ng-deep .p-paginator{
+::ng-deep .p-paginator{
   background-color: transparent;
 }
 
@@ -128,7 +25,7 @@ h1 {
 
 ::ng-deep .p-paginator .p-paginator-pages .p-paginator-page {
   color: white;
-} */
+}
 
 
 

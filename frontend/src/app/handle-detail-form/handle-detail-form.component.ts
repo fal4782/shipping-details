@@ -99,7 +99,10 @@ export class HandleDetailFormComponent {
         
       }
       
-      this.router.navigate(['/']);
+      setTimeout(() => {
+        this.router.navigate(['/'])
+        console.log("Navigating to Main Page");
+      }, 1000);
       
 
     } else {
