@@ -62,7 +62,10 @@ module.exports = {
         })
     },
     deleteDetail: (req,res)=>{
-        service.deleteDetail((err,result)=>{
+
+        const id = req.params.id
+
+        service.deleteDetail(id,(err,result)=>{
             if(err){
                 console.log(err);
                 res.status(400).send(err)

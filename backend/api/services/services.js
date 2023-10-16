@@ -46,13 +46,13 @@ module.exports = {
             }
         })
     },
-    deleteDetail: (callback=>{
-        client.query(`UPDATE shipping_details SET status = 0 WHERE uuid = ${req.params.id}`,(err,result)=>{
+    deleteDetail: (id, callback)=>{
+        client.query(`UPDATE shipping_details SET status = 0 WHERE uuid = ${id}`,(err,result)=>{
             if(!err) {
                 callback(null, result)
             } else {
                 callback(err)
             }
         })
-    })
+    }
 }
