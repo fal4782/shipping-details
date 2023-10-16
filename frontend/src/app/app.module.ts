@@ -14,14 +14,16 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { ToastModule } from 'primeng/toast'
 import { PaginatorModule } from 'primeng/paginator';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { RequiredPipe } from './pipes/required.pipe'
+import { RequiredPipe } from './pipes/required.pipe';
+import { TimePipe } from './pipes/time.pipe'
 
 @NgModule({
   declarations: [
     AppComponent,
     HandleDetailFormComponent,
     ShippingDetailsComponent,
-    RequiredPipe
+    RequiredPipe,
+    TimePipe
   ],
   imports: [
     BrowserModule,

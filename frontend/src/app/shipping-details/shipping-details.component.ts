@@ -44,7 +44,10 @@ export class ShippingDetailsComponent implements OnInit {
     this.apiService.getDetails(offset,limit).subscribe((data) => {
       this.shippingDetails = data.details
       this.noOfDetails = data.count     
+      // console.log(this.shippingDetails);
     })
+    
+    
   }
 
   getTotalCount(){

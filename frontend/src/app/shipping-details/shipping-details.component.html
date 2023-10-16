@@ -22,7 +22,7 @@
         <tr *ngFor="let detail of shippingDetails; let index = index">
           <th>{{detail.uuid}}</th>
           <td>{{detail.product_name}}</td>
-          <td>{{detail.dispatch_time}}</td>
+          <td>{{detail.dispatch_time | time }}</td>
           <td>{{detail.dispatch_date | date: 'dd/MM/yyyy'}}</td>
           <td>{{detail.quantity | number }}</td>
           <td>
