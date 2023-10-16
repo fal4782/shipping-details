@@ -27,5 +27,10 @@ h1 {
   color: white;
 }
 
+/* paginator dropdown */
+::ng-deep #pn_id_1_list{
+  padding:0
+}
+
 
 
