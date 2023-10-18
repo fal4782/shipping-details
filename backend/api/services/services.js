@@ -37,8 +37,8 @@ module.exports = {
             }
         })
     },
-    updateDetail: (data,callback)=>{
-        client.query(`UPDATE shipping_details SET dispatch_time = '${data.dispatchTime}', dispatch_date = '${data.dispatchDate}', quantity = ${data.quantity} WHERE uuid = ${req.params.id}`,(err,result)=>{
+    updateDetail: (data,id,callback)=>{
+        client.query(`UPDATE shipping_details SET dispatch_time = '${data.dispatchTime}', dispatch_date = '${data.dispatchDate}', quantity = ${data.quantity} WHERE uuid = ${id}`,(err,result)=>{
             if(!err) {
                 callback(null,result)
             } else {

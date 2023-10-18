@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiCallService } from '../services/api-call.service';
 import { MessageService } from 'primeng/api';
-
 interface PageEvent {
-  first: number;
+  
+first: number;
   rows: number;
   page: number;
   pageCount: number;

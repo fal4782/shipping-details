@@ -18,31 +18,31 @@ export class ApiCallService {
       .set('offset', offset.toString())
       .set('limit', limit.toString())
 
-    return this.http.get<any>('http://localhost:3000/details',{ params })
+    return this.http.get<any>('http://192.1.200.162:3000/details',{ params })
   }
 
   getTotalCount(){
-    return this.http.get<any>('http://localhost:3000/countDetails')
+    return this.http.get<any>('http://192.1.200.162:3000/countDetails')
   }
 
   postDetails(details:{}){
-    return this.http.post<any>('http://localhost:3000/details',details)
+    return this.http.post<any>('http://192.1.200.162:3000/details',details)
   }
 
   deleteDetails(id:number){
     console.log("Deleted detail of uuid = "+id);
-    return this.http.patch<any>(`http://localhost:3000/deleteDetails/${id}`,{})
+    return this.http.patch<any>(`http://192.1.200.162:3000/deleteDetails/${id}`,{})
   }
 
   findDetail(id:number){
-    return this.http.get<any>(`http://localhost:3000/details/${id}`,{})
+    return this.http.get<any>(`http://192.1.200.162:3000/details/${id}`,{})
   }
 
   patchDetails(id:number, details:{}){
     console.log("Updating detail with UUID = "+id);
     console.log(details);
     
-    return this.http.patch<any>(`http://localhost:3000/details/${id}`, details)
+    return this.http.patch<any>(`http://192.1.200.162:3000/details/${id}`, details)
     
   }
 }

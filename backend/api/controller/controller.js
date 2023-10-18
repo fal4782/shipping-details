@@ -51,8 +51,9 @@ module.exports = {
     },
     updateDetail: (req,res)=>{
         const data = req.body
+        const id = req.params.id
 
-        service.updateDetail(data,(err,result)=>{
+        service.updateDetail(data,id,(err,result)=>{
             if(err) {
                 // console.log(err)
                 res.status(400).send(err)
